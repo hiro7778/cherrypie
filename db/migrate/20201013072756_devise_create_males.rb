@@ -4,12 +4,12 @@ class DeviseCreateMales < ActiveRecord::Migration[6.0]
   def change
     create_table :males do |t|
       ## Database authenticatable
-      t.string  :nickname,           null: false
-      t.string  :age,                null: false
-      t.date    :birth_date,         null: false
-      t.integer :area_id,            null: false
-      t.string  :email,              null: false, default: ""
-      t.string  :encrypted_password, null: false, default: ""
+      t.string :nickname,           null: false
+      t.string :age,                null: false
+      t.date   :birth_date,         null: false
+      t.string :prefecture,         null: false
+      t.string :email,              null: false, default: ""
+      t.string :encrypted_password, null: false, default: ""
 
       ## Recoverable
       t.string   :reset_password_token
