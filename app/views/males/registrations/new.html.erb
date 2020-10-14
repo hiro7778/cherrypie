@@ -1,0 +1,61 @@
+<%= form_with model: @male, url: male_registration_path, method: :POST, local: true do |f| %>
+
+<div>
+  <h1>Create Account</h1>
+
+  <div>
+    <div>
+      <label>Nickname</label>
+    </div>
+    <%= f.text_area :nickname %>
+  </div>
+
+  <div>
+    <div>
+      <label>E-mail</label>
+    </div>
+    <%= f.email_field :email %>
+  </div>
+
+  <div>
+    <div>
+      <label>Password</label>
+    </div>
+    <%= f.password_field :password %>
+  </div>
+
+  <div>
+    <div>
+      <label>Password(confirmation)</label>
+    </div>
+    <%= f.password_field :password_confirmation %>
+  </div>
+
+  <div>
+    <div>
+      <label>Date of Birth</label>
+    </div>
+    <%= f.date_select :birth_date, start_year: 1910, end_year: (Time.now.year - 10) %>
+  </div>
+
+  <div>
+    <div>
+      <label>Age</label>
+    </div>
+    <%= f.text_field :age %>
+  </div>
+
+  <div>
+    <div>
+      <label>Prefectures</label>
+    </div>
+    <%= f.text_field :prefecture %>
+  </div>
+
+  <div>
+    <%= f.submit "Sign-up" %>
+  </div>
+</div>
+<% end %>
+
+<%= render "males/shared/links" %>
