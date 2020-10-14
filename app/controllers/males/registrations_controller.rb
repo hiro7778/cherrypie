@@ -6,13 +6,16 @@ class Males::RegistrationsController < Devise::RegistrationsController
 
   # GET /resource/sign_up
   def new
-    super
+    # super
+    @male = Male.new
   end
 
   # POST /resource
-  # def create
-  #   super
-  # end
+  def create
+    # super
+    @male = Male.new(male_params)
+    @male.save
+  end
 
   # GET /resource/edit
   # def edit
@@ -37,6 +40,11 @@ class Males::RegistrationsController < Devise::RegistrationsController
   # def cancel
   #   super
   # end
+
+  private
+  def male_params
+    params.require(:male).permit(:nickname, :birth_date, :age, :prefecture, :email)
+  end
 
   # protected
 
